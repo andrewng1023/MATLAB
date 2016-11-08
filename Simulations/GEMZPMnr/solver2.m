@@ -12,9 +12,9 @@ b = 1000;
 g = 1;
 m = 1;
 n = 1;
-Km1 = 300;
+Km1 = 100;
 Km2 = 5;
-Km3 = 300;
+Km3 = 100;
 Km4 = 2;
 
 y0 = 0;
@@ -47,9 +47,11 @@ titles = {'pREV1','pRNR2','pRPL18B','pTEF1','pTDH3'};
 
 for i = 1:length(bTF)
     figure(i)
-    imagesc(y_out(:,:,i))
+    imagesc(y_out(:,:,i),[0,800])
     colorbar
     title(titles{i})
     xlabel('E2 (nM)')
     ylabel('Pg (nM)')
+    print(strcat(titles{i},'cmap'),'-dpng','-r300');
 end
+
